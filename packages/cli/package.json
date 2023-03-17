@@ -1,7 +1,7 @@
 {
   "name": "soyhuce",
   "version": "0.0.0",
-  "description": "Generate types from openapi file",
+  "description": "CLI that generates amazing things",
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -13,12 +13,19 @@
   "type": "module",
   "files": [
     "./bin",
-    "./src"
+    "./dist",
+    "./npm-shrinkwrap.json",
+    "./oclif.manifest.json",
+    "./README.md",
+    "../../CONTRIBUTING.md",
+    "../../SECURITY.md",
+    "../../CODE_OF_CONDUCT.md",
+    "../../LICENSE.txt"
   ],
   "oclif": {
     "bin": "soyhuce",
     "dirname": "soyhuce",
-    "commands": "./src/commands",
+    "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
@@ -27,32 +34,12 @@
   "publishConfig": {
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "files": [
-      "./bin",
-      "./dist",
-      "./npm-shrinkwrap.json",
-      "./oclif.manifest.json",
-      "./README.md",
-      "../../CONTRIBUTING.md",
-      "../../SECURITY.md",
-      "../../CODE_OF_CONDUCT.md",
-      "../../LICENSE.txt"
-    ],
     "exports": {
       ".": {
         "require": "./dist/index.js",
         "import": "./dist/index.js",
         "types": "./dist/index.d.ts"
       }
-    },
-    "oclif": {
-      "bin": "soyhuce",
-      "dirname": "soyhuce",
-      "commands": "./dist/commands",
-      "plugins": [
-        "@oclif/plugin-help",
-        "@oclif/plugin-plugins"
-      ]
     }
   },
   "scripts": {
