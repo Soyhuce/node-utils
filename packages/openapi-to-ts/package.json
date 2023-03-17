@@ -1,0 +1,38 @@
+{
+  "name": "@soyhuce/openapi-to-ts",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "type": "module",
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+      "./dist",
+      "./npm-shrinkwrap.json",
+      "./README.md",
+      "../../CONTRIBUTING.md",
+      "../../SECURITY.md",
+      "../../CODE_OF_CONDUCT.md",
+      "../../LICENSE.txt"
+    ],
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "prepack": "pnpm build",
+    "clear": "shx rm -rf {node_modules,.turbo,dist}"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

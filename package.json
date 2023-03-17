@@ -1,0 +1,53 @@
+{
+  "name": "soyhuce-node-utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "preinstall": "npx -y only-allow pnpm",
+    "build": "turbo run build --parallel --continue",
+    "clear": "turbo run clear --parallel --continue",
+    "test:unit": "echo 'No test specified'",
+    "test": "echo 'No test specified'",
+    "eslint": "eslint '**/*.{ts,js}'",
+    "eslint:fix": "pnpm eslint --fix",
+    "lint": "pnpm eslint:fix",
+    "lint:fix": "pnpm eslint:fix",
+    "security:fix": "pnpm audit --audit-level=high --fix",
+    "cz": "git-cz",
+    "changeset": "changeset",
+    "ci:version": "changeset version",
+    "ci:release": "changeset publish",
+    "ci:security": "pnpm audit --audit-level=high"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cz-commitlint": "^17.4.4",
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "turbo": "^1.8.3",
+    "typescript": "^5.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "engines": {
+    "node": ">= 18.7.0",
+    "pnpm": ">= 7.0.0"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "soyhuce",
+  "version": "0.0.0",
+  "description": "Generate types from openapi file",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bin": {
+    "soyhuce": "./bin/run.js"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "type": "module",
+  "files": [
+    "./bin",
+    "./src"
+  ],
+  "oclif": {
+    "bin": "soyhuce",
+    "dirname": "soyhuce",
+    "commands": "./src/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ]
+  },
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+      "./bin",
+      "./dist",
+      "./npm-shrinkwrap.json",
+      "./oclif.manifest.json",
+      "./README.md",
+      "../../CONTRIBUTING.md",
+      "../../SECURITY.md",
+      "../../CODE_OF_CONDUCT.md",
+      "../../LICENSE.txt"
+    ],
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
+    },
+    "oclif": {
+      "bin": "soyhuce",
+      "dirname": "soyhuce",
+      "commands": "./dist/commands",
+      "plugins": [
+        "@oclif/plugin-help",
+        "@oclif/plugin-plugins"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "pnpm build && oclif manifest && oclif readme",
+    "clear": "shx rm -rf {node_modules,.turbo,dist}"
+  },
+  "dependencies": {
+    "@oclif/core": "^2.6.4",
+    "@oclif/plugin-help": "^5.2.8",
+    "@oclif/plugin-plugins": "^2.4.2",
+    "@soyhuce/openapi-to-ts": "workspace:*"
+  },
+  "devDependencies": {
+    "oclif": "^3.7.0"
+  }
+}
