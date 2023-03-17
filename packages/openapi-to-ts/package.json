@@ -11,11 +11,7 @@
   "files": [
     "./dist",
     "./npm-shrinkwrap.json",
-    "./README.md",
-    "../../CONTRIBUTING.md",
-    "../../SECURITY.md",
-    "../../CODE_OF_CONDUCT.md",
-    "../../LICENSE.txt"
+    "./README.md"
   ],
   "publishConfig": {
     "main": "./dist/index.js",
